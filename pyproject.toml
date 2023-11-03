@@ -1,7 +1,7 @@
 [tool.poetry]
-name = "miwg-services"
+name = "rest-services"
 version = "0.1.0"
-description = "REST services to support MIWG demos"
+description = "REST services architype project with poetry and fastapi"
 authors = ["Tim Stephenson <tim@knowprocess.com>"]
 readme = "README.md"
 
@@ -10,6 +10,9 @@ python = "^3.10"
 fastapi = "^0.104.1"
 uvicorn = "^0.23.2"
 pydantic = "^2.4.2"
+httpx = "^0.25.0"
+pytest = "^7.4.3"
+coverage = "^7.3.2"
 
 
 [build-system]

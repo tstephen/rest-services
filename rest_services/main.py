@@ -1,14 +1,14 @@
 from fastapi import FastAPI
 from typing import Union
 
-from models.models import Item
+from rest_services.models.models import Item
 
 app = FastAPI()
 
 
 @app.get("/")
 def read_root():
-    return {"Hello": "World"}
+    return {"msg": "Hello World"}
 
 
 @app.get("/items/{item_id}")
