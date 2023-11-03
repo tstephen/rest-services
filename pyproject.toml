@@ -1,7 +1,7 @@
 [tool.poetry]
 name = "rest-services"
 version = "0.1.0"
-description = "REST services architype project with poetry and fastapi"
+description = "REST services archetype project with poetry and fastapi"
 authors = ["Tim Stephenson <tim@knowprocess.com>"]
 readme = "README.md"
 

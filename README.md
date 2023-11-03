@@ -1,3 +1,8 @@
+# REST services
+
+A simple archetype project to build REST services with python, poetry and fastapi.
+
+Licensed under Apache 2.
 
 ## Development
 
