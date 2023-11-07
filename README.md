@@ -20,3 +20,16 @@ Licensed under Apache 2.
    ```
    poetry run python3 -m pytest -v
    ```
+
+1. Build container image
+
+   ```
+   docker build . -t knowprocess/rest_services:latest
+   ```
+
+1. Run app within image
+
+   ```
+   docker run -p 8000:80 knowprocess/rest_services &
+   open http://localhost:8000/docs
+   ```
