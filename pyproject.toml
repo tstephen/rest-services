@@ -13,7 +13,12 @@ pydantic = "^2.4.2"
 httpx = "^0.25.0"
 pytest = "^7.4.3"
 coverage = "^7.3.2"
+pre-commit = "^4.0.1"
 
+[tool.isort]
+known_third_party = ["fastapi","httpx","pydantic","pydantic_core","pytest","pytest_mock","requests","scripts","starlette","typing_extensions","uvicorn","yaml"]
+src_paths = ["rest-services", "tests"]
+skip = [ ]
 
 [build-system]
 requires = ["poetry-core"]

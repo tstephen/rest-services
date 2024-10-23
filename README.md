@@ -6,6 +6,13 @@ Licensed under Apache 2.
 
 ## Development
 
+1. Install `pre-commit` hook for enforcing code conventions
+
+   ```sh
+   poetry install
+   poetry run pre-commit install
+   ```
+
 1. Run the dev server
 
    ```sh
