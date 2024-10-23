@@ -14,8 +14,18 @@
 # KIND, either express or implied.  See the License for the
 # specific language governing permissions and limitations
 # under the License.
-from pydantic import BaseModel
+from pydantic import BaseModel, Field
 from typing import Union
+
+
+class AppMetadata(BaseModel):
+    name: str = Field(None, description="application name")
+    vendor: str = Field(None, description="application vendor")
+    version: str = Field(None, description="application version")
+    python_version: str = Field(
+        None, alias="python-version", description="python version"
+    )
+
 
 class Item(BaseModel):
     name: str

@@ -14,30 +14,14 @@
 # KIND, either express or implied.  See the License for the
 # specific language governing permissions and limitations
 # under the License.
-import logging
-import time
-from fastapi import FastAPI
+"""
+constants.py
+"""
+from importlib.metadata import version
 
-from rest_services.constants import Tool
-from rest_services.routers.info import info_router
-from rest_services.routers.items import item_router
+class Tool:
+    """Branding info"""
 
-
-logger = logging.getLogger(__name__)
-start_time = time.perf_counter()
-app = FastAPI(
-    title=f"{Tool.NAME} API",
-    version=Tool.VERSION,
-)
-app.include_router(info_router)
-app.include_router(item_router)
-
-
-@app.get("/")
-def read_root():
-    return {"msg": "Hello World"}
-
-
-if __name__ == '__main__':
-    import uvicorn
-    uvicorn.run(app, host="0.0.0.0", port=8000)
+    NAME: str = "REST services"
+    VENDOR: str = "KnowProcess"
+    VERSION = version(__package__)

@@ -8,7 +8,7 @@ Licensed under Apache 2.
 
 1. Run the dev server
 
-   ```
+   ```sh
    poetry run uvicorn rest_services.main:app --reload
    ```
 
@@ -17,19 +17,19 @@ Licensed under Apache 2.
 
 1. Run tests
 
-   ```
+   ```sh
    poetry run python3 -m pytest -v
    ```
 
 1. Build container image
 
-   ```
+   ```sh
    docker build . -t knowprocess/rest_services:latest
    ```
 
 1. Run app within image
 
-   ```
+   ```sh
    docker run -p 8000:80 knowprocess/rest_services &
    open http://localhost:8000/docs
    ```

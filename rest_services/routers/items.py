@@ -14,30 +14,27 @@
 # KIND, either express or implied.  See the License for the
 # specific language governing permissions and limitations
 # under the License.
+"""
+items.py
+"""
+from __future__ import annotations
+
 import logging
-import time
-from fastapi import FastAPI
+from typing import List, Union
 
-from rest_services.constants import Tool
-from rest_services.routers.info import info_router
-from rest_services.routers.items import item_router
+from fastapi import APIRouter
 
+from rest_services.models.models import AppMetadata, Item
 
 logger = logging.getLogger(__name__)
-start_time = time.perf_counter()
-app = FastAPI(
-    title=f"{Tool.NAME} API",
-    version=Tool.VERSION,
-)
-app.include_router(info_router)
-app.include_router(item_router)
+item_router = APIRouter(tags=["items"])
 
 
-@app.get("/")
-def read_root():
-    return {"msg": "Hello World"}
+@item_router.get("/items/{item_id}")
+def read_item(item_id: int, q: Union[str, None] = None):
+    return {"item_id": item_id, "q": q}
 
 
-if __name__ == '__main__':
-    import uvicorn
-    uvicorn.run(app, host="0.0.0.0", port=8000)
+@item_router.put("/items/{item_id}")
+def update_item(item_id: int, item: Item):
+    return {"item_name": item.name, "item_id": item_id}

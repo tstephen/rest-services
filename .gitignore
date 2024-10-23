@@ -1,3 +1,4 @@
 rest_services/__pycache__/
 rest_services/models/__pycache__/
+rest_services/routers/__pycache__/
 tests/__pycache__/
